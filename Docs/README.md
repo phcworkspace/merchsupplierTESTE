@@ -5,4 +5,4 @@
 - [Storybook — Catálogo de Componentes](./storybook.md)
 
 ## Implementações
-_Nenhuma implementação registrada ainda._
+- [Setup do Ambiente de Desenvolvimento Local (2026-06-17)](./setup-ambiente-local-2026-06-17.md)
