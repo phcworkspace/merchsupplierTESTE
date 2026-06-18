@@ -47,11 +47,22 @@ Estas regras devem ser seguidas **em toda implementação**, sem exceção.
 
 ## Padrões Técnicos
 
-- **Tema base:** Dawn (Online Store 2.0) como ponto de partida
+- **Tema base:** Horizon (ID #161734689026) — tema flagship atual da Shopify com arquitetura de Theme Blocks
+- **Arquitetura:** Online Store 2.0 + Theme Blocks (diretório `blocks/` nativo — diferente do Dawn)
 - **Liquid:** usar `render` em vez de `include`; nunca editar o tema publicado diretamente
 - **Workflow:** `theme pull → dev em tema separado → theme push → validar → publicar`
 - **Inkybay:** configurações via painel do app; CSS customizado via campo Extended CSS (não editar Liquid do app)
 - **MCP conectado:** `@shopify/dev-mcp` para docs + Admin API MCP para gestão da loja via Claude
+- **CLI:** Shopify CLI 4.2.0 — auth é account-level (`shopify auth login` sem `--store`); linter via `shopify theme check`
+
+### Diferenças Horizon vs Dawn (importante)
+
+| Aspecto | Dawn | Horizon |
+|---|---|---|
+| Diretório `blocks/` | ❌ não existe | ✅ nativo |
+| Composição de seções | sections + snippets | sections + blocks + snippets |
+| Flexibilidade do lojista | limitada | alta (drag-and-drop de blocks) |
+| Padrão de schema | `settings` em sections | `settings` em sections + schema próprio em blocks |
 
 ---
 
@@ -65,5 +76,12 @@ Estas regras devem ser seguidas **em toda implementação**, sem exceção.
 │   ├── graphify.md        ← arquitetura visual (Mermaid)
 │   ├── storybook.md       ← catálogo de componentes
 │   └── *.md               ← docs de implementações (nome-YYYY-MM-DD.md)
-└── [arquivos do tema Shopify quando exportados]
+├── assets/                ← CSS, JS, imagens do tema
+├── blocks/                ← Theme Blocks (exclusivo Horizon)
+├── config/                ← settings_schema.json, settings_data.json
+├── layout/                ← theme.liquid, password.liquid
+├── locales/               ← traduções
+├── sections/              ← sections Liquid
+├── snippets/              ← snippets reutilizáveis
+└── templates/             ← templates JSON e Liquid
 ```

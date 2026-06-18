@@ -7,9 +7,15 @@
 ```mermaid
 graph TD
     subgraph Shopify
-        A[Tema Dawn - OS 2.0] --> B[Página de Produto]
+        A[Tema Horizon - OS 2.0] --> B[Página de Produto]
         A --> C[Coleções]
         A --> D[Homepage]
+        D --> S1[hero - banner vídeo]
+        D --> S2[product-list - carrossel]
+        D --> S3[about-brand - seção marca ✅]
+        E[(Produtos - 8 DRAFTs)]
+        C --> E
+        B --> E
     end
 
     subgraph Apps
@@ -30,4 +36,4 @@ graph TD
     Shopify --> I
 ```
 
-_Última atualização: setup inicial_
+_Última atualização: 2026-06-18 — seção about-brand criada no tema de desenvolvimento_
