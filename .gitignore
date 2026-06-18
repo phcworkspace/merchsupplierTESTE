@@ -4,7 +4,6 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
-config/settings_data.json
 
 # Design source assets (binários pesados + fontes trial/demo com restrição de licença)
 Desing Source/
