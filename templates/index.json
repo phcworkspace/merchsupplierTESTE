@@ -376,8 +376,23 @@
       }
     }
   },
+    "about_brand_section": {
+      "type": "about-brand",
+      "settings": {
+        "heading": "About Our Brand",
+        "heading_size": "h2",
+        "text": "<p>Premium blanks — hoodies, tees, caps and beanies — embroidered or printed in-house in Las Vegas. Low minimums, fast turnaround, no setup headaches.</p>",
+        "button_label": "Learn more",
+        "button_link": "/pages/about",
+        "background_color": "transparent",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
   "order": [
     "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "product_list_fa6P9H",
+    "about_brand_section"
   ]
 }
