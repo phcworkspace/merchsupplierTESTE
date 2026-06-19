@@ -58,10 +58,11 @@
           assign swatch_count = product_option.values | map: 'swatch' | compact | size
           assign variant_style = block_settings.variant_style
 
-          assign variant_image_count = 0
-          for opv in product_option.values
-            if opv.variant.featured_media != blank
-              assign variant_image_count = variant_image_count | plus: 1
+          assign has_variant_images = false
+          for variant in product_resource.variants
+            if variant.featured_media != blank
+              assign has_variant_images = true
+              break
             endif
           endfor
 
@@ -69,7 +70,7 @@
           if swatch_count > 0
             assign has_visual_swatches = true
           endif
-          if variant_image_count > 0
+          if has_variant_images
             assign has_visual_swatches = true
           endif
 
