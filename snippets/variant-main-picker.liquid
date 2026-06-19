@@ -162,6 +162,12 @@
                         endif
                       endfor
                     endif
+
+                    # Prefer a configured native swatch (color/image) over the variant's product photo,
+                    # so swatches render as clean color chips instead of a shrunk product mockup.
+                    if product_option_value.swatch.color or product_option_value.swatch.image
+                      assign featured_media = null
+                    endif
                   %}
 
                   {% render 'swatch',

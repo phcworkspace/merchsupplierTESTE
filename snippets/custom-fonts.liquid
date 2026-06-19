@@ -1,0 +1,67 @@
+{%- doc -%}
+  Fonte de marca custom: GT Alpina (subfamília Standard).
+
+  Declara os @font-face dos arquivos em assets/ e sobrescreve as variáveis CSS
+  de família do tema (body + heading). DEVE ser renderizado APÓS
+  'theme-styles-variables' em layout/theme.liquid para vencer a cascata.
+
+  ⚠️ LICENÇA: os arquivos empacotados são GT Alpina *Trial* — licenciados apenas
+  para teste/mockup. Para produção, substituir pelos arquivos da licença Webfont
+  comprada da Grilli Type (mesmos nomes em assets/).
+{%- enddoc -%}
+
+{% style %}
+  @font-face {
+    font-family: "GT Alpina";
+    src: url({{ 'gt-alpina-standard-regular.woff2' | asset_url }}) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "GT Alpina";
+    src: url({{ 'gt-alpina-standard-regular-italic.woff2' | asset_url }}) format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "GT Alpina";
+    src: url({{ 'gt-alpina-standard-medium.woff2' | asset_url }}) format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "GT Alpina";
+    src: url({{ 'gt-alpina-standard-medium-italic.woff2' | asset_url }}) format("woff2");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "GT Alpina";
+    src: url({{ 'gt-alpina-standard-bold.woff2' | asset_url }}) format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "GT Alpina";
+    src: url({{ 'gt-alpina-standard-bold-italic.woff2' | asset_url }}) format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Override das famílias do tema: GT Alpina em corpo e títulos */
+  :root {
+    --font-body--family: "GT Alpina", Georgia, "Times New Roman", serif;
+    --font-heading--family: "GT Alpina", Georgia, "Times New Roman", serif;
+  }
+{% endstyle %}

@@ -1,0 +1,7 @@
+# Arquivos temporários de gravação atômica (criados por editores/ferramentas ao salvar)
+# Ex.: templates/product.json.tmp.47176.2d14305291f2
+/\.tmp[^/]*$/
+
+# Outros temporários comuns de editor
+*.swp
+*~

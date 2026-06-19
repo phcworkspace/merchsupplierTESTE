@@ -31,7 +31,30 @@
 
 ## Snippets
 
-_Nenhum snippet customizado ainda._
+### `variant-main-picker` (customizado)
+
+**Arquivo:** `snippets/variant-main-picker.liquid` (base Horizon, modificado)
+**Descrição:** Renderiza o seletor de variantes na página de produto. Modos: `buttons`, `dropdowns`, `swatch`, `swatch_dropdown`.
+
+**Customização (2026-06-19):** quando a option value tem **swatch nativo** (`swatch.color` ou `swatch.image`), o swatch nativo tem prioridade sobre a imagem de variante (`featured_media`) na renderização do quadradinho — exibindo um swatch de cor/textura limpo em vez do mockup do produto encolhido. Produtos sem swatch nativo continuam usando a imagem de variante como swatch.
+
+**Depende de:**
+- Bloco variant-picker com `show_swatches: true`
+- Swatch nativo configurado na option value, OU imagem de variante + `settings.show_variant_image`
+- Snippet `swatch.liquid` (renderização do quadradinho)
+
+Ver: [Swatches de Cor na Página de Produto](./variant-color-swatches-2026-06-19.md)
+
+### `custom-fonts` (criado)
+
+**Arquivo:** `snippets/custom-fonts.liquid`
+**Descrição:** Declara os `@font-face` da fonte de marca **GT Alpina (Standard)** a partir dos `.woff2` em `assets/` e sobrescreve `--font-body--family` e `--font-heading--family`. Renderizado em `layout/theme.liquid` após `theme-styles-variables`.
+
+**Cortes incluídos:** Regular (400), Medium (500), Bold (700) + itálicos — todos `woff2`, `font-display: swap`.
+
+> ⚠️ Arquivos atuais são **Trial** (uso só em teste). Produção exige licença Webfont da Grilli Type.
+
+Ver: [Importação da Fonte Custom GT Alpina](./import-fonte-gt-alpina-2026-06-19.md)
 
 ## Blocos (Blocks)
 
