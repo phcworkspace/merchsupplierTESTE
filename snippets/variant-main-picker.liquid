@@ -58,7 +58,22 @@
           assign swatch_count = product_option.values | map: 'swatch' | compact | size
           assign variant_style = block_settings.variant_style
 
-          if swatch_count > 0 and block_settings.show_swatches
+          assign variant_image_count = 0
+          for opv in product_option.values
+            if opv.variant.featured_media != blank
+              assign variant_image_count = variant_image_count | plus: 1
+            endif
+          endfor
+
+          assign has_visual_swatches = false
+          if swatch_count > 0
+            assign has_visual_swatches = true
+          endif
+          if variant_image_count > 0
+            assign has_visual_swatches = true
+          endif
+
+          if has_visual_swatches and block_settings.show_swatches
             if block_settings.variant_style == 'dropdown'
               assign variant_style = 'swatch_dropdown'
             else
